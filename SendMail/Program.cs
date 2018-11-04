@@ -1,4 +1,5 @@
 ﻿#region Apache License
+
 //  Copyright 2018 Glenn Alon
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,24 +13,21 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-#endregion
 
+#endregion Apache License
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SendMail
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

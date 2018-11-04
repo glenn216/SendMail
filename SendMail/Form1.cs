@@ -1,4 +1,5 @@
 ﻿#region Apache License
+
 //  Copyright 2018 Glenn Alon
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +13,15 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-#endregion
 
-using System;
-using System.Windows.Forms;
+#endregion Apache License
+
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System;
 using System.Net;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace SendMail
 {
@@ -35,7 +37,7 @@ namespace SendMail
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
             {
@@ -47,7 +49,6 @@ namespace SendMail
 
                 var smtp = new SmtpClient
                 {
-
                     Host = textBox7.Text,
                     Port = Convert.ToInt32(textBox8.Text),
                     EnableSsl = true,
@@ -63,13 +64,40 @@ namespace SendMail
                 {
                     try
                     {
-                        smtp.Send(message);
-                        MessageBox.Show("Message Sent");
+                        if (checkBox1.Checked == true)
+                        {
+                            message.IsBodyHtml = true;
+                            if (textBox9.Text == null)
+                            {
+                            }
+                            else
+                            {
+                                Attachment attachment;
+                                attachment = new Attachment(textBox9.Text);
+                                message.Attachments.Add(attachment);
+                            }
+                            smtp.Send(message);
+                            MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else
+                        {
+                            message.IsBodyHtml = false;
+                            if (textBox9.Text == null)
+                            {
+                            }
+                            else
+                            {
+                                Attachment attachment;
+                                attachment = new Attachment(textBox9.Text);
+                                message.Attachments.Add(attachment);
+                            }
+                            smtp.Send(message);
+                            MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
                     }
-
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -83,7 +111,6 @@ namespace SendMail
 
                 var smtp = new SmtpClient
                 {
-
                     Host = textBox7.Text,
                     Port = Convert.ToInt32(textBox8.Text),
                     EnableSsl = false,
@@ -99,15 +126,52 @@ namespace SendMail
                 {
                     try
                     {
-                        smtp.Send(message);
-                        MessageBox.Show("Message Sent");
+                        if (checkBox1.Checked == true)
+                        {
+                            message.IsBodyHtml = true;
+                            if (textBox9.Text == null)
+                            {
+                            }
+                            else
+                            {
+                                Attachment attachment;
+                                attachment = new Attachment(textBox9.Text);
+                                message.Attachments.Add(attachment);
+                            }
+                            smtp.Send(message);
+                            MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else
+                        {
+                            message.IsBodyHtml = false;
+                            if (textBox9.Text == null)
+                            {
+                            }
+                            else
+                            {
+                                Attachment attachment;
+                                attachment = new Attachment(textBox9.Text);
+                                message.Attachments.Add(attachment);
+                            }
+                            smtp.Send(message);
+                            MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
                     }
-
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                textBox9.Text = file;
             }
         }
     }

@@ -46,36 +46,42 @@ namespace SendMail
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -93,31 +99,27 @@ namespace SendMail
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sender Details";
             // 
-            // materialLabel1
+            // textBox3
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(24, 31);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(103, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Sender Name:";
+            this.textBox3.Location = new System.Drawing.Point(133, 86);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '•';
+            this.textBox3.Size = new System.Drawing.Size(179, 20);
+            this.textBox3.TabIndex = 5;
             // 
-            // materialLabel2
+            // textBox2
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(22, 61);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(105, 19);
-            this.materialLabel2.TabIndex = 1;
-            this.materialLabel2.Text = "Sender E-mail:";
+            this.textBox2.Location = new System.Drawing.Point(133, 60);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 20);
+            this.textBox2.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(133, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // materialLabel3
             // 
@@ -132,26 +134,31 @@ namespace SendMail
             this.materialLabel3.TabIndex = 2;
             this.materialLabel3.Text = "Sender Password:";
             // 
-            // textBox1
+            // materialLabel2
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 3;
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(22, 61);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(105, 19);
+            this.materialLabel2.TabIndex = 1;
+            this.materialLabel2.Text = "Sender E-mail:";
             // 
-            // textBox2
+            // materialLabel1
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(133, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 5;
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(24, 31);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(103, 19);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "Sender Name:";
             // 
             // groupBox2
             // 
@@ -166,25 +173,12 @@ namespace SendMail
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recipient Details";
             // 
-            // materialLabel4
+            // textBox5
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(6, 26);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(119, 19);
-            this.materialLabel4.TabIndex = 0;
-            this.materialLabel4.Text = "Recipient Name:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(131, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 20);
-            this.textBox4.TabIndex = 6;
+            this.textBox5.Location = new System.Drawing.Point(131, 57);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(179, 20);
+            this.textBox5.TabIndex = 8;
             // 
             // materialLabel5
             // 
@@ -199,23 +193,44 @@ namespace SendMail
             this.materialLabel5.TabIndex = 7;
             this.materialLabel5.Text = "Recipient E-mail:";
             // 
-            // textBox5
+            // textBox4
             // 
-            this.textBox5.Location = new System.Drawing.Point(131, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(179, 20);
-            this.textBox5.TabIndex = 8;
+            this.textBox4.Location = new System.Drawing.Point(131, 26);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(179, 20);
+            this.textBox4.TabIndex = 6;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(6, 26);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(119, 19);
+            this.materialLabel4.TabIndex = 0;
+            this.materialLabel4.Text = "Recipient Name:";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.textBox6);
             this.groupBox3.Controls.Add(this.materialLabel6);
             this.groupBox3.Location = new System.Drawing.Point(12, 288);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 51);
+            this.groupBox3.Size = new System.Drawing.Size(318, 69);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "E-mail Details";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(131, 19);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(179, 20);
+            this.textBox6.TabIndex = 9;
             // 
             // materialLabel6
             // 
@@ -230,13 +245,6 @@ namespace SendMail
             this.materialLabel6.TabIndex = 0;
             this.materialLabel6.Text = "Subject:";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(131, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(179, 20);
-            this.textBox6.TabIndex = 9;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.radioButton2);
@@ -246,38 +254,50 @@ namespace SendMail
             this.groupBox4.Controls.Add(this.materialLabel9);
             this.groupBox4.Controls.Add(this.materialLabel8);
             this.groupBox4.Controls.Add(this.materialLabel7);
-            this.groupBox4.Location = new System.Drawing.Point(13, 346);
+            this.groupBox4.Location = new System.Drawing.Point(13, 363);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(317, 125);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "SMTP Details";
             // 
-            // materialLabel7
+            // radioButton2
             // 
-            this.materialLabel7.AutoSize = true;
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(56, 31);
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(46, 19);
-            this.materialLabel7.TabIndex = 0;
-            this.materialLabel7.Text = "Host:";
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(179, 88);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(39, 17);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.Text = "No";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // materialLabel8
+            // radioButton1
             // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(61, 59);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(41, 19);
-            this.materialLabel8.TabIndex = 1;
-            this.materialLabel8.Text = "Port:";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(130, 88);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(43, 17);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Yes";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(130, 58);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(179, 20);
+            this.textBox8.TabIndex = 11;
+            this.textBox8.Text = "587";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(130, 30);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(179, 20);
+            this.textBox7.TabIndex = 10;
+            this.textBox7.Text = "smtp.gmail.com";
             // 
             // materialLabel9
             // 
@@ -292,43 +312,31 @@ namespace SendMail
             this.materialLabel9.TabIndex = 2;
             this.materialLabel9.Text = "Enable SSL?";
             // 
-            // textBox7
+            // materialLabel8
             // 
-            this.textBox7.Location = new System.Drawing.Point(130, 30);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(179, 20);
-            this.textBox7.TabIndex = 10;
-            this.textBox7.Text = "smtp.gmail.com";
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(61, 59);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(41, 19);
+            this.materialLabel8.TabIndex = 1;
+            this.materialLabel8.Text = "Port:";
             // 
-            // textBox8
+            // materialLabel7
             // 
-            this.textBox8.Location = new System.Drawing.Point(130, 58);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(179, 20);
-            this.textBox8.TabIndex = 11;
-            this.textBox8.Text = "587";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(130, 88);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(43, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Yes";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(179, 88);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(56, 31);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(46, 19);
+            this.materialLabel7.TabIndex = 0;
+            this.materialLabel7.Text = "Host:";
             // 
             // groupBox5
             // 
@@ -338,21 +346,10 @@ namespace SendMail
             this.groupBox5.Controls.Add(this.richTextBox1);
             this.groupBox5.Location = new System.Drawing.Point(336, 68);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(676, 364);
+            this.groupBox5.Size = new System.Drawing.Size(676, 495);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "E-mail Body";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(937, 444);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "SendMail";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox1
             // 
@@ -361,15 +358,69 @@ namespace SendMail
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(7, 20);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(663, 336);
+            this.richTextBox1.Size = new System.Drawing.Size(663, 469);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(937, 575);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "SendMail";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(66, 42);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(91, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "HTML Format";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Location = new System.Drawing.Point(12, 494);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(318, 100);
+            this.groupBox6.TabIndex = 11;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Attachment";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(6, 43);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(223, 20);
+            this.textBox9.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(235, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Browse";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 479);
+            this.ClientSize = new System.Drawing.Size(1024, 610);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -389,6 +440,8 @@ namespace SendMail
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -421,6 +474,11 @@ namespace SendMail
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
 
