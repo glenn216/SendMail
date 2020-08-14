@@ -27,7 +27,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SendMail")]
-[assembly: AssemblyCopyright("Copyright ©  2018 Glenn")]
+[assembly: AssemblyCopyright("Copyright ©  2020 Glenn Alon")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

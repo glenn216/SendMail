@@ -37,20 +37,20 @@ namespace SendMail
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void sendMail_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            if (yesRadio.Checked)
             {
-                var fromAddress = new MailAddress(textBox2.Text, textBox1.Text);
-                var toAddress = new MailAddress(textBox5.Text, textBox4.Text);
-                string fromPassword = textBox3.Text;
-                string subject = textBox6.Text;
-                string body = richTextBox1.Text;
+                var fromAddress = new MailAddress(senderEmail.Text, senderName.Text);
+                var toAddress = new MailAddress(reciEmail.Text, reciName.Text);
+                string fromPassword = senderPass.Text;
+                string subject = this.subjectText.Text;
+                string body = bodyRichTB.Text;
 
                 var smtp = new SmtpClient
                 {
-                    Host = textBox7.Text,
-                    Port = Convert.ToInt32(textBox8.Text),
+                    Host = smtpHost.Text,
+                    Port = Convert.ToInt32(smtpPort.Text),
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
@@ -64,16 +64,16 @@ namespace SendMail
                 {
                     try
                     {
-                        if (checkBox1.Checked == true)
+                        if (htmlCheck.Checked == true)
                         {
                             message.IsBodyHtml = true;
-                            if (textBox9.Text == null)
+                            if (attach.Text == null)
                             {
                             }
                             else
                             {
                                 Attachment attachment;
-                                attachment = new Attachment(textBox9.Text);
+                                attachment = new Attachment(attach.Text);
                                 message.Attachments.Add(attachment);
                             }
                             smtp.Send(message);
@@ -82,13 +82,13 @@ namespace SendMail
                         else
                         {
                             message.IsBodyHtml = false;
-                            if (textBox9.Text == null)
+                            if (attach.Text == null)
                             {
                             }
                             else
                             {
                                 Attachment attachment;
-                                attachment = new Attachment(textBox9.Text);
+                                attachment = new Attachment(attach.Text);
                                 message.Attachments.Add(attachment);
                             }
                             smtp.Send(message);
@@ -101,18 +101,19 @@ namespace SendMail
                     }
                 }
             }
+
             else
             {
-                var fromAddress = new MailAddress(textBox2.Text, textBox1.Text);
-                var toAddress = new MailAddress(textBox5.Text, textBox4.Text);
-                string fromPassword = textBox3.Text;
-                string subject = textBox6.Text;
-                string body = richTextBox1.Text;
+                var fromAddress = new MailAddress(senderEmail.Text, senderName.Text);
+                var toAddress = new MailAddress(reciEmail.Text, reciName.Text);
+                string fromPassword = senderPass.Text;
+                string subject = this.subjectText.Text;
+                string body = bodyRichTB.Text;
 
                 var smtp = new SmtpClient
                 {
-                    Host = textBox7.Text,
-                    Port = Convert.ToInt32(textBox8.Text),
+                    Host = smtpHost.Text,
+                    Port = Convert.ToInt32(smtpPort.Text),
                     EnableSsl = false,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
@@ -126,16 +127,16 @@ namespace SendMail
                 {
                     try
                     {
-                        if (checkBox1.Checked == true)
+                        if (htmlCheck.Checked == true)
                         {
                             message.IsBodyHtml = true;
-                            if (textBox9.Text == null)
+                            if (attach.Text == null)
                             {
                             }
                             else
                             {
                                 Attachment attachment;
-                                attachment = new Attachment(textBox9.Text);
+                                attachment = new Attachment(attach.Text);
                                 message.Attachments.Add(attachment);
                             }
                             smtp.Send(message);
@@ -144,13 +145,13 @@ namespace SendMail
                         else
                         {
                             message.IsBodyHtml = false;
-                            if (textBox9.Text == null)
+                            if (attach.Text == null)
                             {
                             }
                             else
                             {
                                 Attachment attachment;
-                                attachment = new Attachment(textBox9.Text);
+                                attachment = new Attachment(attach.Text);
                                 message.Attachments.Add(attachment);
                             }
                             smtp.Send(message);
@@ -165,13 +166,13 @@ namespace SendMail
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void browse_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
                 string file = openFileDialog1.FileName;
-                textBox9.Text = file;
+                attach.Text = file;
             }
         }
     }
