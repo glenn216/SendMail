@@ -19,7 +19,7 @@
 
 namespace SendMail
 {
-    partial class Form1
+    partial class SendMail
     {
         /// <summary>
         /// Required designer variable.
@@ -64,8 +64,8 @@ namespace SendMail
             this.subjectText = new System.Windows.Forms.TextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.noRadio = new System.Windows.Forms.RadioButton();
-            this.yesRadio = new System.Windows.Forms.RadioButton();
+            this.disableSSL = new System.Windows.Forms.RadioButton();
+            this.enableSSL = new System.Windows.Forms.RadioButton();
             this.smtpPort = new System.Windows.Forms.TextBox();
             this.smtpHost = new System.Windows.Forms.TextBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
@@ -78,6 +78,7 @@ namespace SendMail
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.attach = new System.Windows.Forms.TextBox();
+            this.attachCheck = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -259,8 +260,8 @@ namespace SendMail
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.noRadio);
-            this.groupBox4.Controls.Add(this.yesRadio);
+            this.groupBox4.Controls.Add(this.disableSSL);
+            this.groupBox4.Controls.Add(this.enableSSL);
             this.groupBox4.Controls.Add(this.smtpPort);
             this.groupBox4.Controls.Add(this.smtpHost);
             this.groupBox4.Controls.Add(this.materialLabel9);
@@ -273,27 +274,27 @@ namespace SendMail
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "SMTP Details";
             // 
-            // noRadio
+            // disableSSL
             // 
-            this.noRadio.AutoSize = true;
-            this.noRadio.Location = new System.Drawing.Point(179, 88);
-            this.noRadio.Name = "noRadio";
-            this.noRadio.Size = new System.Drawing.Size(39, 17);
-            this.noRadio.TabIndex = 13;
-            this.noRadio.Text = "No";
-            this.noRadio.UseVisualStyleBackColor = true;
+            this.disableSSL.AutoSize = true;
+            this.disableSSL.Location = new System.Drawing.Point(179, 88);
+            this.disableSSL.Name = "disableSSL";
+            this.disableSSL.Size = new System.Drawing.Size(39, 17);
+            this.disableSSL.TabIndex = 13;
+            this.disableSSL.Text = "No";
+            this.disableSSL.UseVisualStyleBackColor = true;
             // 
-            // yesRadio
+            // enableSSL
             // 
-            this.yesRadio.AutoSize = true;
-            this.yesRadio.Checked = true;
-            this.yesRadio.Location = new System.Drawing.Point(130, 88);
-            this.yesRadio.Name = "yesRadio";
-            this.yesRadio.Size = new System.Drawing.Size(43, 17);
-            this.yesRadio.TabIndex = 12;
-            this.yesRadio.TabStop = true;
-            this.yesRadio.Text = "Yes";
-            this.yesRadio.UseVisualStyleBackColor = true;
+            this.enableSSL.AutoSize = true;
+            this.enableSSL.Checked = true;
+            this.enableSSL.Location = new System.Drawing.Point(130, 88);
+            this.enableSSL.Name = "enableSSL";
+            this.enableSSL.Size = new System.Drawing.Size(43, 17);
+            this.enableSSL.TabIndex = 12;
+            this.enableSSL.TabStop = true;
+            this.enableSSL.Text = "Yes";
+            this.enableSSL.UseVisualStyleBackColor = true;
             // 
             // smtpPort
             // 
@@ -383,7 +384,7 @@ namespace SendMail
             this.sendButton.TabIndex = 10;
             this.sendButton.Text = "SendMail";
             this.sendButton.UseVisualStyleBackColor = true;
-            this.sendButton.Click += new System.EventHandler(this.sendMail_Click);
+            this.sendButton.Click += new System.EventHandler(this.Send_Click);
             // 
             // openFileDialog1
             // 
@@ -391,6 +392,7 @@ namespace SendMail
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.attachCheck);
             this.groupBox6.Controls.Add(this.browseButton);
             this.groupBox6.Controls.Add(this.attach);
             this.groupBox6.Location = new System.Drawing.Point(12, 494);
@@ -402,22 +404,32 @@ namespace SendMail
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(235, 41);
+            this.browseButton.Location = new System.Drawing.Point(235, 47);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 1;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
-            this.browseButton.Click += new System.EventHandler(this.browse_Click);
+            this.browseButton.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
             // attach
             // 
-            this.attach.Location = new System.Drawing.Point(6, 43);
+            this.attach.Location = new System.Drawing.Point(6, 49);
             this.attach.Name = "attach";
             this.attach.Size = new System.Drawing.Size(223, 20);
             this.attach.TabIndex = 0;
             // 
-            // Form1
+            // attachCheck
+            // 
+            this.attachCheck.AutoSize = true;
+            this.attachCheck.Location = new System.Drawing.Point(8, 26);
+            this.attachCheck.Name = "attachCheck";
+            this.attachCheck.Size = new System.Drawing.Size(116, 17);
+            this.attachCheck.TabIndex = 11;
+            this.attachCheck.Text = "Enable Attachment";
+            this.attachCheck.UseVisualStyleBackColor = true;
+            // 
+            // SendMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -430,7 +442,7 @@ namespace SendMail
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "SendMail";
             this.Sizable = false;
             this.Text = "SendMail";
             this.groupBox1.ResumeLayout(false);
@@ -466,8 +478,8 @@ namespace SendMail
         private System.Windows.Forms.TextBox subjectText;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton noRadio;
-        private System.Windows.Forms.RadioButton yesRadio;
+        private System.Windows.Forms.RadioButton disableSSL;
+        private System.Windows.Forms.RadioButton enableSSL;
         private System.Windows.Forms.TextBox smtpPort;
         private System.Windows.Forms.TextBox smtpHost;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
@@ -481,6 +493,7 @@ namespace SendMail
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.TextBox attach;
+        private System.Windows.Forms.CheckBox attachCheck;
     }
 }
 
