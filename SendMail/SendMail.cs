@@ -35,6 +35,8 @@ namespace SendMail
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+            button2.Enabled = false;
         }
   
         private void Send_Click(object sender, EventArgs e)
@@ -176,6 +178,20 @@ namespace SendMail
                 string file = openFileDialog1.FileName;
                 attach.Text = file;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            senderPass.PasswordChar = '\0';
+            button2.Enabled = true;
+            button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            senderPass.PasswordChar = '•';
+            button2.Enabled = false;
+            button1.Enabled = true;
         }
     }
 } 

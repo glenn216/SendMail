@@ -76,9 +76,11 @@ namespace SendMail
             this.sendButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.attachCheck = new System.Windows.Forms.CheckBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.attach = new System.Windows.Forms.TextBox();
-            this.attachCheck = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,6 +91,8 @@ namespace SendMail
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.senderPass);
             this.groupBox1.Controls.Add(this.senderEmail);
             this.groupBox1.Controls.Add(this.senderName);
@@ -97,7 +101,7 @@ namespace SendMail
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 119);
+            this.groupBox1.Size = new System.Drawing.Size(318, 146);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sender Details";
@@ -169,7 +173,7 @@ namespace SendMail
             this.groupBox2.Controls.Add(this.materialLabel5);
             this.groupBox2.Controls.Add(this.reciName);
             this.groupBox2.Controls.Add(this.materialLabel4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 193);
+            this.groupBox2.Location = new System.Drawing.Point(12, 220);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(318, 89);
             this.groupBox2.TabIndex = 6;
@@ -221,7 +225,7 @@ namespace SendMail
             this.groupBox3.Controls.Add(this.htmlCheck);
             this.groupBox3.Controls.Add(this.subjectText);
             this.groupBox3.Controls.Add(this.materialLabel6);
-            this.groupBox3.Location = new System.Drawing.Point(12, 288);
+            this.groupBox3.Location = new System.Drawing.Point(12, 315);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(318, 69);
             this.groupBox3.TabIndex = 7;
@@ -267,7 +271,7 @@ namespace SendMail
             this.groupBox4.Controls.Add(this.materialLabel9);
             this.groupBox4.Controls.Add(this.materialLabel8);
             this.groupBox4.Controls.Add(this.materialLabel7);
-            this.groupBox4.Location = new System.Drawing.Point(13, 363);
+            this.groupBox4.Location = new System.Drawing.Point(12, 390);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(317, 125);
             this.groupBox4.TabIndex = 8;
@@ -395,16 +399,26 @@ namespace SendMail
             this.groupBox6.Controls.Add(this.attachCheck);
             this.groupBox6.Controls.Add(this.browseButton);
             this.groupBox6.Controls.Add(this.attach);
-            this.groupBox6.Location = new System.Drawing.Point(12, 494);
+            this.groupBox6.Location = new System.Drawing.Point(12, 521);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(318, 100);
+            this.groupBox6.Size = new System.Drawing.Size(318, 73);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Attachment";
             // 
+            // attachCheck
+            // 
+            this.attachCheck.AutoSize = true;
+            this.attachCheck.Location = new System.Drawing.Point(9, 20);
+            this.attachCheck.Name = "attachCheck";
+            this.attachCheck.Size = new System.Drawing.Size(116, 17);
+            this.attachCheck.TabIndex = 11;
+            this.attachCheck.Text = "Enable Attachment";
+            this.attachCheck.UseVisualStyleBackColor = true;
+            // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(235, 47);
+            this.browseButton.Location = new System.Drawing.Point(235, 40);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 1;
@@ -414,20 +428,30 @@ namespace SendMail
             // 
             // attach
             // 
-            this.attach.Location = new System.Drawing.Point(6, 49);
+            this.attach.Location = new System.Drawing.Point(8, 43);
             this.attach.Name = "attach";
             this.attach.Size = new System.Drawing.Size(223, 20);
             this.attach.TabIndex = 0;
             // 
-            // attachCheck
+            // button1
             // 
-            this.attachCheck.AutoSize = true;
-            this.attachCheck.Location = new System.Drawing.Point(8, 26);
-            this.attachCheck.Name = "attachCheck";
-            this.attachCheck.Size = new System.Drawing.Size(116, 17);
-            this.attachCheck.TabIndex = 11;
-            this.attachCheck.Text = "Enable Attachment";
-            this.attachCheck.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(153, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Show";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(234, 113);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Hide";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SendMail
             // 
@@ -494,6 +518,8 @@ namespace SendMail
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.TextBox attach;
         private System.Windows.Forms.CheckBox attachCheck;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
