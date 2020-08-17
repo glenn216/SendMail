@@ -77,14 +77,26 @@ namespace SendMail
                                     attachment = new Attachment(attach.Text);
                                     message.Attachments.Add(attachment);
                                 }
-                                else if (attachCheck.Checked == false) ;
-                             smtp.Send(message);
-                             MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                         }
+
+                                progressBar1.Minimum = 1;
+                                progressBar1.Maximum = 100000;
+                                progressBar1.Value = 1;
+                                progressBar1.Step = 1;
+                                progressBar1.Visible = true;
+                                for (int x = 1; x <= 100000; x++)
+                                {
+                                    progressBar1.PerformStep();
+                                }
+
+                                smtp.Send(message);
+                                MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                progressBar1.Visible = false;
+                            }
                      }
                      catch (Exception ex)
                      {
                          MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         progressBar1.Visible = false;
                      }
                  }
              }
@@ -103,14 +115,27 @@ namespace SendMail
                                     attachment = new Attachment(attach.Text);
                                     message.Attachments.Add(attachment);
                                 }
-                                else if (attachCheck.Checked == false) ;
+
+                                progressBar1.Minimum = 1;
+                                progressBar1.Maximum = 100000;
+                                progressBar1.Value = 1;
+                                progressBar1.Step = 1;
+                                progressBar1.Visible = true;
+                                for (int x = 1; x <= 100000; x++)
+                                {
+                                    progressBar1.PerformStep();
+                                }
+
                              smtp.Send(message);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                         }
+                             progressBar1.Visible = false;
+                        }
                      }
                      catch (Exception ex)
                      {
                          MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         progressBar1.Visible = false;
+
                      }
                  }
              }
@@ -129,15 +154,27 @@ namespace SendMail
                                     attachment = new Attachment(attach.Text);
                                     message.Attachments.Add(attachment);
                                 }
-                                else if (attachCheck.Checked == false) ;
+
+                                progressBar1.Minimum = 1;
+                                progressBar1.Maximum = 100000;
+                                progressBar1.Value = 1;
+                                progressBar1.Step = 1;
+                                progressBar1.Visible = true;
+                                for (int x = 1; x <= 100000; x++)
+                                {
+                                    progressBar1.PerformStep();
+                                }
+
                              smtp.Send(message);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                             progressBar1.Visible = false;
                          }
                      }
 
                      catch (Exception ex)
                      {
                          MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         progressBar1.Visible = false;
                      }
                  }
              }
@@ -157,14 +194,27 @@ namespace SendMail
                                     message.Attachments.Add(attachment);
                                 }
                                 else if (attachCheck.Checked == false) ;
+
+                                progressBar1.Minimum = 1;
+                                progressBar1.Maximum = 100000;
+                                progressBar1.Value = 1;
+                                progressBar1.Step = 1;
+                                progressBar1.Visible = true;
+                                for (int x = 1; x <= 100000; x++)
+                                {
+                                    progressBar1.PerformStep();
+                                }
+
                              smtp.Send(message);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                             progressBar1.Visible = false;
                          }
                      }
 
                      catch (Exception ex)
                      {
                          MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         progressBar1.Visible = false;
                      }
                  }
              }
