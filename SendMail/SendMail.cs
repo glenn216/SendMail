@@ -59,7 +59,8 @@ namespace SendMail
             using (var message = new MailMessage(fromAddress, toAddress)
             {
                 Subject = subject,
-                Body = body
+                Body = body,
+                Priority = MailPriority.High
             })
 
 
@@ -88,7 +89,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                                smtp.SendAsync(message, null);
+                                smtp.Send(message);
                                 MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 progressBar1.Visible = false;
                             }
@@ -126,7 +127,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                             smtp.SendAsync(message, null);
+                             smtp.Send(message);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                              progressBar1.Visible = false;
                         }
@@ -165,7 +166,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                             smtp.SendAsync(message, null);
+                             smtp.Send(message);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                              progressBar1.Visible = false;
                          }
@@ -204,7 +205,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                             smtp.SendAsync(message, null);
+                             smtp.Send(message);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                              progressBar1.Visible = false;
                          }
@@ -229,18 +230,18 @@ namespace SendMail
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             senderPass.PasswordChar = '\0';
             button2.Enabled = true;
             button1.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             senderPass.PasswordChar = '•';
             button2.Enabled = false;
             button1.Enabled = true;
         }
     }
-} 
+}
