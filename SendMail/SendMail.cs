@@ -88,7 +88,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                                smtp.Send(message);
+                                smtp.SendAsync(message, null);
                                 MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 progressBar1.Visible = false;
                             }
@@ -126,7 +126,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                             smtp.Send(message);
+                             smtp.SendAsync(message, null);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                              progressBar1.Visible = false;
                         }
@@ -165,7 +165,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                             smtp.Send(message);
+                             smtp.SendAsync(message, null);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                              progressBar1.Visible = false;
                          }
@@ -193,7 +193,6 @@ namespace SendMail
                                     attachment = new Attachment(attach.Text);
                                     message.Attachments.Add(attachment);
                                 }
-                                else if (attachCheck.Checked == false) ;
 
                                 progressBar1.Minimum = 1;
                                 progressBar1.Maximum = 100000;
@@ -205,7 +204,7 @@ namespace SendMail
                                     progressBar1.PerformStep();
                                 }
 
-                             smtp.Send(message);
+                             smtp.SendAsync(message, null);
                              MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                              progressBar1.Visible = false;
                          }
