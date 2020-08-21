@@ -78,7 +78,11 @@ namespace SendMail
             this.sendButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.attachCheck = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.attachCheck3 = new System.Windows.Forms.CheckBox();
+            this.attachCheck2 = new System.Windows.Forms.CheckBox();
+            this.attachCheck1 = new System.Windows.Forms.CheckBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.attach = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -384,7 +388,7 @@ namespace SendMail
             this.groupBox5.Controls.Add(this.bodyRichTB);
             this.groupBox5.Location = new System.Drawing.Point(336, 68);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(676, 495);
+            this.groupBox5.Size = new System.Drawing.Size(676, 517);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "E-mail Body";
@@ -396,14 +400,14 @@ namespace SendMail
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bodyRichTB.Location = new System.Drawing.Point(7, 20);
             this.bodyRichTB.Name = "bodyRichTB";
-            this.bodyRichTB.Size = new System.Drawing.Size(663, 469);
+            this.bodyRichTB.Size = new System.Drawing.Size(663, 491);
             this.bodyRichTB.TabIndex = 0;
             this.bodyRichTB.Text = "";
             // 
             // sendButton
             // 
             this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendButton.Location = new System.Drawing.Point(937, 575);
+            this.sendButton.Location = new System.Drawing.Point(937, 597);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(75, 23);
             this.sendButton.TabIndex = 10;
@@ -417,25 +421,74 @@ namespace SendMail
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.attachCheck);
+            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.attachCheck3);
+            this.groupBox6.Controls.Add(this.attachCheck2);
+            this.groupBox6.Controls.Add(this.attachCheck1);
             this.groupBox6.Controls.Add(this.browseButton);
             this.groupBox6.Controls.Add(this.attach);
             this.groupBox6.Location = new System.Drawing.Point(12, 521);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(318, 73);
+            this.groupBox6.Size = new System.Drawing.Size(318, 99);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Attachment";
             // 
-            // attachCheck
+            // button4
             // 
-            this.attachCheck.AutoSize = true;
-            this.attachCheck.Location = new System.Drawing.Point(9, 20);
-            this.attachCheck.Name = "attachCheck";
-            this.attachCheck.Size = new System.Drawing.Size(116, 17);
-            this.attachCheck.TabIndex = 11;
-            this.attachCheck.Text = "Enable Attachment";
-            this.attachCheck.UseVisualStyleBackColor = true;
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Location = new System.Drawing.Point(6, 69);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Clear All";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Location = new System.Drawing.Point(235, 70);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // attachCheck3
+            // 
+            this.attachCheck3.AutoSize = true;
+            this.attachCheck3.Enabled = false;
+            this.attachCheck3.Location = new System.Drawing.Point(210, 19);
+            this.attachCheck3.Name = "attachCheck3";
+            this.attachCheck3.Size = new System.Drawing.Size(89, 17);
+            this.attachCheck3.TabIndex = 13;
+            this.attachCheck3.Text = "Attachment 3";
+            this.attachCheck3.UseVisualStyleBackColor = true;
+            // 
+            // attachCheck2
+            // 
+            this.attachCheck2.AutoSize = true;
+            this.attachCheck2.Enabled = false;
+            this.attachCheck2.Location = new System.Drawing.Point(115, 19);
+            this.attachCheck2.Name = "attachCheck2";
+            this.attachCheck2.Size = new System.Drawing.Size(89, 17);
+            this.attachCheck2.TabIndex = 12;
+            this.attachCheck2.Text = "Attachment 2";
+            this.attachCheck2.UseVisualStyleBackColor = true;
+            // 
+            // attachCheck1
+            // 
+            this.attachCheck1.AutoSize = true;
+            this.attachCheck1.Enabled = false;
+            this.attachCheck1.Location = new System.Drawing.Point(20, 19);
+            this.attachCheck1.Name = "attachCheck1";
+            this.attachCheck1.Size = new System.Drawing.Size(89, 17);
+            this.attachCheck1.TabIndex = 11;
+            this.attachCheck1.Text = "Attachment 1";
+            this.attachCheck1.UseVisualStyleBackColor = true;
             // 
             // browseButton
             // 
@@ -457,7 +510,7 @@ namespace SendMail
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(786, 575);
+            this.progressBar1.Location = new System.Drawing.Point(786, 597);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(145, 23);
             this.progressBar1.TabIndex = 12;
@@ -467,7 +520,7 @@ namespace SendMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 610);
+            this.ClientSize = new System.Drawing.Size(1024, 632);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.sendButton);
@@ -528,10 +581,14 @@ namespace SendMail
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.TextBox attach;
-        private System.Windows.Forms.CheckBox attachCheck;
+        private System.Windows.Forms.CheckBox attachCheck1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.CheckBox attachCheck3;
+        private System.Windows.Forms.CheckBox attachCheck2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }
 
