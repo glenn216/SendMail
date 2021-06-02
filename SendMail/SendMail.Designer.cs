@@ -1,6 +1,6 @@
 ﻿#region Apache License
 
-//  Copyright 2018-2020 Glenn Alon
+//  Copyright 2018-2021 Glenn Alon
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 //  limitations under the License.
 
 #endregion
-
 
 namespace SendMail
 {

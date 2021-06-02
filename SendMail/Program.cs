@@ -1,6 +1,6 @@
 ﻿#region Apache License
 
-//  Copyright 2018-2020 Glenn Alon
+//  Copyright 2018-2021 Glenn Alon
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-#endregion Apache License
+#endregion
 
 using System;
 using System.Windows.Forms;
