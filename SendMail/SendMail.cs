@@ -27,9 +27,9 @@ namespace SendMail
 {
     public partial class SendMail : MaterialForm
     {
-        string attachmentFile1 { get; set; }
-        string attachmentFile2 { get; set; }
-        string attachmentFile3 { get; set; }
+        string AttachmentFile1 { get; set; }
+        string AttachmentFile2 { get; set; }
+        string AttachmentFile3 { get; set; }
 
         public bool Attachment1 = false;
         public bool Attachment2 = false;
@@ -44,24 +44,25 @@ namespace SendMail
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-            button2.Enabled = false;
+            hideBtn.Enabled = false;
         }
 
-        private void Send_Click(object sender, EventArgs e)
+        private void sendBtn_Click(object sender, EventArgs e)
         {
-            var fromAddress = new MailAddress(senderEmail.Text, senderName.Text);
-            var toAddress = new MailAddress(reciEmail.Text, reciName.Text);
-            string fromPassword = senderPass.Text;
-            string subject = this.subjectText.Text;
+            var fromAddress = new MailAddress(senderEmailTxt.Text, senderNameTxt.Text);
+            var toAddress = new MailAddress(recEmailTxt.Text, recNameTxt.Text);
+            string fromPassword = senderPasswordTxt.Text;
+            string subject = this.subjectTxt.Text;
             string body = bodyRichTB.Text;
+
             Attachment attachment1;
             Attachment attachment2;
             Attachment attachment3;
 
             var smtp = new SmtpClient
             {
-                Host = smtpHost.Text,
-                Port = Convert.ToInt32(smtpPort.Text),
+                Host = smtpHostTxt.Text,
+                Port = Convert.ToInt32(smtpPortTxt.Text),
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
@@ -73,9 +74,8 @@ namespace SendMail
                 Body = body,
                 Priority = MailPriority.High
             })
-
-
-                if (enableSSL.Checked && htmlCheck.Checked == true)
+            {
+                if (enableSSLBtn.Checked && htmlCheckBox.Checked)
                 {
                     {
                         try
@@ -84,21 +84,21 @@ namespace SendMail
                             {
                                 message.IsBodyHtml = true;
 
-                                if (attachCheck1.Checked == true)
+                                if (attFileCheckBox1.Checked)
                                 {
-                                    attachment1 = new Attachment(attachmentFile1);
+                                    attachment1 = new Attachment(AttachmentFile1);
                                     message.Attachments.Add(attachment1);
                                 }
 
-                                if (attachCheck2.Checked == true)
+                                if (attFileCheckBox2.Checked)
                                 {
-                                    attachment2 = new Attachment(attachmentFile2);
+                                    attachment2 = new Attachment(AttachmentFile2);
                                     message.Attachments.Add(attachment2);
                                 }
 
-                                if (attachCheck3.Checked == true)
+                                if (attFileCheckBox3.Checked)
                                 {
-                                    attachment3 = new Attachment(attachmentFile3);
+                                    attachment3 = new Attachment(AttachmentFile3);
                                     message.Attachments.Add(attachment3);
                                 }
 
@@ -125,7 +125,7 @@ namespace SendMail
                     }
                 }
 
-                else if (enableSSL.Checked && htmlCheck.Checked == false)
+                else if (enableSSLBtn.Checked && !htmlCheckBox.Checked)
                 {
                     {
                         try
@@ -134,21 +134,21 @@ namespace SendMail
                             {
                                 message.IsBodyHtml = false;
 
-                                if (attachCheck1.Checked == true)
+                                if (attFileCheckBox1.Checked)
                                 {
-                                    attachment1 = new Attachment(attachmentFile1);
+                                    attachment1 = new Attachment(AttachmentFile1);
                                     message.Attachments.Add(attachment1);
                                 }
 
-                                if (attachCheck2.Checked == true)
+                                if (attFileCheckBox2.Checked)
                                 {
-                                    attachment2 = new Attachment(attachmentFile2);
+                                    attachment2 = new Attachment(AttachmentFile2);
                                     message.Attachments.Add(attachment2);
                                 }
 
-                                if (attachCheck3.Checked == true)
+                                if (attFileCheckBox3.Checked)
                                 {
-                                    attachment3 = new Attachment(attachmentFile3);
+                                    attachment3 = new Attachment(AttachmentFile3);
                                     message.Attachments.Add(attachment3);
                                 }
 
@@ -176,7 +176,7 @@ namespace SendMail
                     }
                 }
 
-                else if (disableSSL.Checked && htmlCheck.Checked == true)
+                else if (disableSSLBtn.Checked && htmlCheckBox.Checked)
                 {
                     {
                         try
@@ -185,21 +185,21 @@ namespace SendMail
                             {
                                 message.IsBodyHtml = true;
 
-                                if (attachCheck1.Checked == true)
+                                if (attFileCheckBox1.Checked)
                                 {
-                                    attachment1 = new Attachment(attachmentFile1);
+                                    attachment1 = new Attachment(AttachmentFile1);
                                     message.Attachments.Add(attachment1);
                                 }
 
-                                if (attachCheck2.Checked == true)
+                                if (attFileCheckBox2.Checked)
                                 {
-                                    attachment2 = new Attachment(attachmentFile2);
+                                    attachment2 = new Attachment(AttachmentFile2);
                                     message.Attachments.Add(attachment2);
                                 }
 
-                                if (attachCheck3.Checked == true)
+                                if (attFileCheckBox3.Checked)
                                 {
-                                    attachment3 = new Attachment(attachmentFile3);
+                                    attachment3 = new Attachment(AttachmentFile3);
                                     message.Attachments.Add(attachment3);
                                 }
 
@@ -227,7 +227,7 @@ namespace SendMail
                     }
                 }
 
-                else if (disableSSL.Checked && htmlCheck.Checked == false)
+                else if (disableSSLBtn.Checked && !htmlCheckBox.Checked)
                 {
                     {
                         try
@@ -236,21 +236,21 @@ namespace SendMail
                             {
                                 message.IsBodyHtml = false;
 
-                                if (attachCheck1.Checked == true)
+                                if (attFileCheckBox1.Checked)
                                 {
-                                    attachment1 = new Attachment(attachmentFile1);
+                                    attachment1 = new Attachment(AttachmentFile1);
                                     message.Attachments.Add(attachment1);
                                 }
 
-                                if (attachCheck2.Checked == true)
+                                if (attFileCheckBox2.Checked)
                                 {
-                                    attachment2 = new Attachment(attachmentFile2);
+                                    attachment2 = new Attachment(AttachmentFile2);
                                     message.Attachments.Add(attachment2);
                                 }
 
-                                if (attachCheck3.Checked == true)
+                                if (attFileCheckBox3.Checked)
                                 {
-                                    attachment3 = new Attachment(attachmentFile3);
+                                    attachment3 = new Attachment(AttachmentFile3);
                                     message.Attachments.Add(attachment3);
                                 }
 
@@ -277,9 +277,10 @@ namespace SendMail
                         }
                     }
                 }
+            }
         }
 
-        private void BrowseButton_Click(object sender, EventArgs e)
+        private void browseBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -288,67 +289,66 @@ namespace SendMail
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void showBtn_Click(object sender, EventArgs e)
         {
-            senderPass.PasswordChar = '\0';
-            button2.Enabled = true;
-            button1.Enabled = false;
+            senderPasswordTxt.PasswordChar = '\0';
+            hideBtn.Enabled = true;
+            showBtn.Enabled = false;
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void hideBtn_Click(object sender, EventArgs e)
         {
-            senderPass.PasswordChar = '•';
-            button2.Enabled = false;
-            button1.Enabled = true;
+            senderPasswordTxt.PasswordChar = '•';
+            hideBtn.Enabled = false;
+            showBtn.Enabled = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {     
-            if (Attachment1 == false && Attachment2 == false && Attachment3 == false)
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            switch (Attachment1)
             {
-                attachmentFile1 = attach.Text;
-                Attachment1 = true;
-                attachCheck1.Checked = true;
-                attachCheck1.Enabled = true;
-                attach.Text = "";
-            }
+                case false when Attachment2 == false && Attachment3 == false:
+                    AttachmentFile1 = attach.Text;
+                    Attachment1 = true;
+                    attFileCheckBox1.Checked = true;
+                    attFileCheckBox1.Enabled = true;
+                    attach.Text = "";
+                    break;
 
-            else if (Attachment1 == true && Attachment2 == false && Attachment3 == false)
-            {
-                attachmentFile2 = attach.Text;
-                Attachment2 = true;
-                attachCheck2.Checked = true;
-                attachCheck2.Enabled = true;
-                attach.Text = "";
-            }
+                case true when Attachment2 == false && Attachment3 == false:
+                    AttachmentFile2 = attach.Text;
+                    Attachment2 = true;
+                    attFileCheckBox2.Checked = true;
+                    attFileCheckBox2.Enabled = true;
+                    attach.Text = "";
+                    break;
 
-            else if (Attachment1 == true && Attachment2 == true && Attachment3 == false)
-            {
-                attachmentFile3 = attach.Text;
-                Attachment3 = true;
-                attachCheck3.Checked = true;
-                attachCheck3.Enabled = true;
-                attach.Text = "";
-            }
+                case true when Attachment2 == true && Attachment3 == false:
+                    AttachmentFile3 = attach.Text;
+                    Attachment3 = true;
+                    attFileCheckBox3.Checked = true;
+                    attFileCheckBox3.Enabled = true;
+                    attach.Text = "";
+                    break;
 
-            else if (Attachment1 == true && Attachment2 == true && Attachment3 == true)
-            {
-                MessageBox.Show("Attachment is full. Click 'Clear All' button to reset attachments.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                attach.Text = "";
+                case true when Attachment2 == true && Attachment3 == true:
+                    MessageBox.Show("Attachment is full. Click 'Clear All' button to reset attachments.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    attach.Text = "";
+                    break;
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void clearBtn_Click(object sender, EventArgs e)
         {
-            attachmentFile1 = null;
-            attachmentFile2 = null;
-            attachmentFile3 = null;
-            attachCheck1.Checked = false;
-            attachCheck1.Enabled = false;
-            attachCheck2.Checked = false;
-            attachCheck2.Enabled = false;
-            attachCheck3.Checked = false;
-            attachCheck3.Enabled = false;
+            AttachmentFile1 = null;
+            AttachmentFile2 = null;
+            AttachmentFile3 = null;
+            attFileCheckBox1.Checked = false;
+            attFileCheckBox1.Enabled = false;
+            attFileCheckBox2.Checked = false;
+            attFileCheckBox2.Enabled = false;
+            attFileCheckBox3.Checked = false;
+            attFileCheckBox3.Enabled = false;
             Attachment1 = false;
             Attachment2 = false;
             Attachment3 = false;

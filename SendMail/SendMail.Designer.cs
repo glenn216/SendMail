@@ -48,42 +48,42 @@ namespace SendMail
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.senderPass = new System.Windows.Forms.TextBox();
-            this.senderEmail = new System.Windows.Forms.TextBox();
-            this.senderName = new System.Windows.Forms.TextBox();
+            this.hideBtn = new System.Windows.Forms.Button();
+            this.showBtn = new System.Windows.Forms.Button();
+            this.senderPasswordTxt = new System.Windows.Forms.TextBox();
+            this.senderEmailTxt = new System.Windows.Forms.TextBox();
+            this.senderNameTxt = new System.Windows.Forms.TextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.reciEmail = new System.Windows.Forms.TextBox();
+            this.recEmailTxt = new System.Windows.Forms.TextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.reciName = new System.Windows.Forms.TextBox();
+            this.recNameTxt = new System.Windows.Forms.TextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.htmlCheck = new System.Windows.Forms.CheckBox();
-            this.subjectText = new System.Windows.Forms.TextBox();
+            this.htmlCheckBox = new System.Windows.Forms.CheckBox();
+            this.subjectTxt = new System.Windows.Forms.TextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.disableSSL = new System.Windows.Forms.RadioButton();
-            this.enableSSL = new System.Windows.Forms.RadioButton();
-            this.smtpPort = new System.Windows.Forms.TextBox();
-            this.smtpHost = new System.Windows.Forms.TextBox();
+            this.disableSSLBtn = new System.Windows.Forms.RadioButton();
+            this.enableSSLBtn = new System.Windows.Forms.RadioButton();
+            this.smtpPortTxt = new System.Windows.Forms.TextBox();
+            this.smtpHostTxt = new System.Windows.Forms.TextBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.bodyRichTB = new System.Windows.Forms.RichTextBox();
-            this.sendButton = new System.Windows.Forms.Button();
+            this.sendBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.attachCheck3 = new System.Windows.Forms.CheckBox();
-            this.attachCheck2 = new System.Windows.Forms.CheckBox();
-            this.attachCheck1 = new System.Windows.Forms.CheckBox();
-            this.browseButton = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.attFileCheckBox3 = new System.Windows.Forms.CheckBox();
+            this.attFileCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.attFileCheckBox1 = new System.Windows.Forms.CheckBox();
+            this.browseBtn = new System.Windows.Forms.Button();
             this.attach = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
@@ -96,11 +96,11 @@ namespace SendMail
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.senderPass);
-            this.groupBox1.Controls.Add(this.senderEmail);
-            this.groupBox1.Controls.Add(this.senderName);
+            this.groupBox1.Controls.Add(this.hideBtn);
+            this.groupBox1.Controls.Add(this.showBtn);
+            this.groupBox1.Controls.Add(this.senderPasswordTxt);
+            this.groupBox1.Controls.Add(this.senderEmailTxt);
+            this.groupBox1.Controls.Add(this.senderNameTxt);
             this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.materialLabel2);
             this.groupBox1.Controls.Add(this.materialLabel1);
@@ -111,47 +111,47 @@ namespace SendMail
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sender Details";
             // 
-            // button2
+            // hideBtn
             // 
-            this.button2.Location = new System.Drawing.Point(234, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Hide";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.hideBtn.Location = new System.Drawing.Point(234, 113);
+            this.hideBtn.Name = "hideBtn";
+            this.hideBtn.Size = new System.Drawing.Size(75, 23);
+            this.hideBtn.TabIndex = 7;
+            this.hideBtn.Text = "Hide";
+            this.hideBtn.UseVisualStyleBackColor = true;
+            this.hideBtn.Click += new System.EventHandler(this.hideBtn_Click);
             // 
-            // button1
+            // showBtn
             // 
-            this.button1.Location = new System.Drawing.Point(153, 113);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Show";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.showBtn.Location = new System.Drawing.Point(153, 113);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(75, 23);
+            this.showBtn.TabIndex = 6;
+            this.showBtn.Text = "Show";
+            this.showBtn.UseVisualStyleBackColor = true;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
             // 
-            // senderPass
+            // senderPasswordTxt
             // 
-            this.senderPass.Location = new System.Drawing.Point(133, 86);
-            this.senderPass.Name = "senderPass";
-            this.senderPass.PasswordChar = '•';
-            this.senderPass.Size = new System.Drawing.Size(179, 20);
-            this.senderPass.TabIndex = 5;
+            this.senderPasswordTxt.Location = new System.Drawing.Point(133, 86);
+            this.senderPasswordTxt.Name = "senderPasswordTxt";
+            this.senderPasswordTxt.PasswordChar = '•';
+            this.senderPasswordTxt.Size = new System.Drawing.Size(179, 20);
+            this.senderPasswordTxt.TabIndex = 5;
             // 
-            // senderEmail
+            // senderEmailTxt
             // 
-            this.senderEmail.Location = new System.Drawing.Point(133, 60);
-            this.senderEmail.Name = "senderEmail";
-            this.senderEmail.Size = new System.Drawing.Size(179, 20);
-            this.senderEmail.TabIndex = 4;
+            this.senderEmailTxt.Location = new System.Drawing.Point(133, 60);
+            this.senderEmailTxt.Name = "senderEmailTxt";
+            this.senderEmailTxt.Size = new System.Drawing.Size(179, 20);
+            this.senderEmailTxt.TabIndex = 4;
             // 
-            // senderName
+            // senderNameTxt
             // 
-            this.senderName.Location = new System.Drawing.Point(133, 32);
-            this.senderName.Name = "senderName";
-            this.senderName.Size = new System.Drawing.Size(179, 20);
-            this.senderName.TabIndex = 3;
+            this.senderNameTxt.Location = new System.Drawing.Point(133, 32);
+            this.senderNameTxt.Name = "senderNameTxt";
+            this.senderNameTxt.Size = new System.Drawing.Size(179, 20);
+            this.senderNameTxt.TabIndex = 3;
             // 
             // materialLabel3
             // 
@@ -194,9 +194,9 @@ namespace SendMail
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.reciEmail);
+            this.groupBox2.Controls.Add(this.recEmailTxt);
             this.groupBox2.Controls.Add(this.materialLabel5);
-            this.groupBox2.Controls.Add(this.reciName);
+            this.groupBox2.Controls.Add(this.recNameTxt);
             this.groupBox2.Controls.Add(this.materialLabel4);
             this.groupBox2.Location = new System.Drawing.Point(12, 220);
             this.groupBox2.Name = "groupBox2";
@@ -205,12 +205,12 @@ namespace SendMail
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recipient Details";
             // 
-            // reciEmail
+            // recEmailTxt
             // 
-            this.reciEmail.Location = new System.Drawing.Point(131, 57);
-            this.reciEmail.Name = "reciEmail";
-            this.reciEmail.Size = new System.Drawing.Size(179, 20);
-            this.reciEmail.TabIndex = 8;
+            this.recEmailTxt.Location = new System.Drawing.Point(131, 57);
+            this.recEmailTxt.Name = "recEmailTxt";
+            this.recEmailTxt.Size = new System.Drawing.Size(179, 20);
+            this.recEmailTxt.TabIndex = 8;
             // 
             // materialLabel5
             // 
@@ -225,12 +225,12 @@ namespace SendMail
             this.materialLabel5.TabIndex = 7;
             this.materialLabel5.Text = "Recipient E-mail:";
             // 
-            // reciName
+            // recNameTxt
             // 
-            this.reciName.Location = new System.Drawing.Point(131, 26);
-            this.reciName.Name = "reciName";
-            this.reciName.Size = new System.Drawing.Size(179, 20);
-            this.reciName.TabIndex = 6;
+            this.recNameTxt.Location = new System.Drawing.Point(131, 26);
+            this.recNameTxt.Name = "recNameTxt";
+            this.recNameTxt.Size = new System.Drawing.Size(179, 20);
+            this.recNameTxt.TabIndex = 6;
             // 
             // materialLabel4
             // 
@@ -247,8 +247,8 @@ namespace SendMail
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.htmlCheck);
-            this.groupBox3.Controls.Add(this.subjectText);
+            this.groupBox3.Controls.Add(this.htmlCheckBox);
+            this.groupBox3.Controls.Add(this.subjectTxt);
             this.groupBox3.Controls.Add(this.materialLabel6);
             this.groupBox3.Location = new System.Drawing.Point(12, 315);
             this.groupBox3.Name = "groupBox3";
@@ -257,22 +257,22 @@ namespace SendMail
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "E-mail Details";
             // 
-            // htmlCheck
+            // htmlCheckBox
             // 
-            this.htmlCheck.AutoSize = true;
-            this.htmlCheck.Location = new System.Drawing.Point(66, 42);
-            this.htmlCheck.Name = "htmlCheck";
-            this.htmlCheck.Size = new System.Drawing.Size(91, 17);
-            this.htmlCheck.TabIndex = 10;
-            this.htmlCheck.Text = "HTML Format";
-            this.htmlCheck.UseVisualStyleBackColor = true;
+            this.htmlCheckBox.AutoSize = true;
+            this.htmlCheckBox.Location = new System.Drawing.Point(66, 42);
+            this.htmlCheckBox.Name = "htmlCheckBox";
+            this.htmlCheckBox.Size = new System.Drawing.Size(91, 17);
+            this.htmlCheckBox.TabIndex = 10;
+            this.htmlCheckBox.Text = "HTML Format";
+            this.htmlCheckBox.UseVisualStyleBackColor = true;
             // 
-            // subjectText
+            // subjectTxt
             // 
-            this.subjectText.Location = new System.Drawing.Point(131, 19);
-            this.subjectText.Name = "subjectText";
-            this.subjectText.Size = new System.Drawing.Size(179, 20);
-            this.subjectText.TabIndex = 9;
+            this.subjectTxt.Location = new System.Drawing.Point(131, 19);
+            this.subjectTxt.Name = "subjectTxt";
+            this.subjectTxt.Size = new System.Drawing.Size(179, 20);
+            this.subjectTxt.TabIndex = 9;
             // 
             // materialLabel6
             // 
@@ -289,10 +289,10 @@ namespace SendMail
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.disableSSL);
-            this.groupBox4.Controls.Add(this.enableSSL);
-            this.groupBox4.Controls.Add(this.smtpPort);
-            this.groupBox4.Controls.Add(this.smtpHost);
+            this.groupBox4.Controls.Add(this.disableSSLBtn);
+            this.groupBox4.Controls.Add(this.enableSSLBtn);
+            this.groupBox4.Controls.Add(this.smtpPortTxt);
+            this.groupBox4.Controls.Add(this.smtpHostTxt);
             this.groupBox4.Controls.Add(this.materialLabel9);
             this.groupBox4.Controls.Add(this.materialLabel8);
             this.groupBox4.Controls.Add(this.materialLabel7);
@@ -303,43 +303,43 @@ namespace SendMail
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "SMTP Details";
             // 
-            // disableSSL
+            // disableSSLBtn
             // 
-            this.disableSSL.AutoSize = true;
-            this.disableSSL.Location = new System.Drawing.Point(179, 88);
-            this.disableSSL.Name = "disableSSL";
-            this.disableSSL.Size = new System.Drawing.Size(39, 17);
-            this.disableSSL.TabIndex = 13;
-            this.disableSSL.Text = "No";
-            this.disableSSL.UseVisualStyleBackColor = true;
+            this.disableSSLBtn.AutoSize = true;
+            this.disableSSLBtn.Location = new System.Drawing.Point(179, 88);
+            this.disableSSLBtn.Name = "disableSSLBtn";
+            this.disableSSLBtn.Size = new System.Drawing.Size(39, 17);
+            this.disableSSLBtn.TabIndex = 13;
+            this.disableSSLBtn.Text = "No";
+            this.disableSSLBtn.UseVisualStyleBackColor = true;
             // 
-            // enableSSL
+            // enableSSLBtn
             // 
-            this.enableSSL.AutoSize = true;
-            this.enableSSL.Checked = true;
-            this.enableSSL.Location = new System.Drawing.Point(130, 88);
-            this.enableSSL.Name = "enableSSL";
-            this.enableSSL.Size = new System.Drawing.Size(43, 17);
-            this.enableSSL.TabIndex = 12;
-            this.enableSSL.TabStop = true;
-            this.enableSSL.Text = "Yes";
-            this.enableSSL.UseVisualStyleBackColor = true;
+            this.enableSSLBtn.AutoSize = true;
+            this.enableSSLBtn.Checked = true;
+            this.enableSSLBtn.Location = new System.Drawing.Point(130, 88);
+            this.enableSSLBtn.Name = "enableSSLBtn";
+            this.enableSSLBtn.Size = new System.Drawing.Size(43, 17);
+            this.enableSSLBtn.TabIndex = 12;
+            this.enableSSLBtn.TabStop = true;
+            this.enableSSLBtn.Text = "Yes";
+            this.enableSSLBtn.UseVisualStyleBackColor = true;
             // 
-            // smtpPort
+            // smtpPortTxt
             // 
-            this.smtpPort.Location = new System.Drawing.Point(130, 58);
-            this.smtpPort.Name = "smtpPort";
-            this.smtpPort.Size = new System.Drawing.Size(179, 20);
-            this.smtpPort.TabIndex = 11;
-            this.smtpPort.Text = "587";
+            this.smtpPortTxt.Location = new System.Drawing.Point(130, 58);
+            this.smtpPortTxt.Name = "smtpPortTxt";
+            this.smtpPortTxt.Size = new System.Drawing.Size(179, 20);
+            this.smtpPortTxt.TabIndex = 11;
+            this.smtpPortTxt.Text = "465";
             // 
-            // smtpHost
+            // smtpHostTxt
             // 
-            this.smtpHost.Location = new System.Drawing.Point(130, 30);
-            this.smtpHost.Name = "smtpHost";
-            this.smtpHost.Size = new System.Drawing.Size(179, 20);
-            this.smtpHost.TabIndex = 10;
-            this.smtpHost.Text = "smtp.gmail.com";
+            this.smtpHostTxt.Location = new System.Drawing.Point(130, 30);
+            this.smtpHostTxt.Name = "smtpHostTxt";
+            this.smtpHostTxt.Size = new System.Drawing.Size(179, 20);
+            this.smtpHostTxt.TabIndex = 10;
+            this.smtpHostTxt.Text = "smtp.server.com";
             // 
             // materialLabel9
             // 
@@ -404,16 +404,16 @@ namespace SendMail
             this.bodyRichTB.TabIndex = 0;
             this.bodyRichTB.Text = "";
             // 
-            // sendButton
+            // sendBtn
             // 
-            this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendButton.Location = new System.Drawing.Point(937, 597);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(75, 23);
-            this.sendButton.TabIndex = 10;
-            this.sendButton.Text = "SendMail";
-            this.sendButton.UseVisualStyleBackColor = true;
-            this.sendButton.Click += new System.EventHandler(this.Send_Click);
+            this.sendBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sendBtn.Location = new System.Drawing.Point(937, 597);
+            this.sendBtn.Name = "sendBtn";
+            this.sendBtn.Size = new System.Drawing.Size(75, 23);
+            this.sendBtn.TabIndex = 10;
+            this.sendBtn.Text = "SendMail";
+            this.sendBtn.UseVisualStyleBackColor = true;
+            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
             // 
             // openFileDialog1
             // 
@@ -421,12 +421,12 @@ namespace SendMail
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Controls.Add(this.attachCheck3);
-            this.groupBox6.Controls.Add(this.attachCheck2);
-            this.groupBox6.Controls.Add(this.attachCheck1);
-            this.groupBox6.Controls.Add(this.browseButton);
+            this.groupBox6.Controls.Add(this.clearBtn);
+            this.groupBox6.Controls.Add(this.addBtn);
+            this.groupBox6.Controls.Add(this.attFileCheckBox3);
+            this.groupBox6.Controls.Add(this.attFileCheckBox2);
+            this.groupBox6.Controls.Add(this.attFileCheckBox1);
+            this.groupBox6.Controls.Add(this.browseBtn);
             this.groupBox6.Controls.Add(this.attach);
             this.groupBox6.Location = new System.Drawing.Point(12, 521);
             this.groupBox6.Name = "groupBox6";
@@ -435,70 +435,70 @@ namespace SendMail
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Attachment";
             // 
-            // button4
+            // clearBtn
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Location = new System.Drawing.Point(6, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Clear All";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.clearBtn.Location = new System.Drawing.Point(6, 69);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 15;
+            this.clearBtn.Text = "Clear All";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
-            // button3
+            // addBtn
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(235, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addBtn.Location = new System.Drawing.Point(235, 70);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBtn.TabIndex = 14;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // attachCheck3
+            // attFileCheckBox3
             // 
-            this.attachCheck3.AutoSize = true;
-            this.attachCheck3.Enabled = false;
-            this.attachCheck3.Location = new System.Drawing.Point(210, 19);
-            this.attachCheck3.Name = "attachCheck3";
-            this.attachCheck3.Size = new System.Drawing.Size(89, 17);
-            this.attachCheck3.TabIndex = 13;
-            this.attachCheck3.Text = "Attachment 3";
-            this.attachCheck3.UseVisualStyleBackColor = true;
+            this.attFileCheckBox3.AutoSize = true;
+            this.attFileCheckBox3.Enabled = false;
+            this.attFileCheckBox3.Location = new System.Drawing.Point(210, 19);
+            this.attFileCheckBox3.Name = "attFileCheckBox3";
+            this.attFileCheckBox3.Size = new System.Drawing.Size(89, 17);
+            this.attFileCheckBox3.TabIndex = 13;
+            this.attFileCheckBox3.Text = "Attachment 3";
+            this.attFileCheckBox3.UseVisualStyleBackColor = true;
             // 
-            // attachCheck2
+            // attFileCheckBox2
             // 
-            this.attachCheck2.AutoSize = true;
-            this.attachCheck2.Enabled = false;
-            this.attachCheck2.Location = new System.Drawing.Point(115, 19);
-            this.attachCheck2.Name = "attachCheck2";
-            this.attachCheck2.Size = new System.Drawing.Size(89, 17);
-            this.attachCheck2.TabIndex = 12;
-            this.attachCheck2.Text = "Attachment 2";
-            this.attachCheck2.UseVisualStyleBackColor = true;
+            this.attFileCheckBox2.AutoSize = true;
+            this.attFileCheckBox2.Enabled = false;
+            this.attFileCheckBox2.Location = new System.Drawing.Point(115, 19);
+            this.attFileCheckBox2.Name = "attFileCheckBox2";
+            this.attFileCheckBox2.Size = new System.Drawing.Size(89, 17);
+            this.attFileCheckBox2.TabIndex = 12;
+            this.attFileCheckBox2.Text = "Attachment 2";
+            this.attFileCheckBox2.UseVisualStyleBackColor = true;
             // 
-            // attachCheck1
+            // attFileCheckBox1
             // 
-            this.attachCheck1.AutoSize = true;
-            this.attachCheck1.Enabled = false;
-            this.attachCheck1.Location = new System.Drawing.Point(20, 19);
-            this.attachCheck1.Name = "attachCheck1";
-            this.attachCheck1.Size = new System.Drawing.Size(89, 17);
-            this.attachCheck1.TabIndex = 11;
-            this.attachCheck1.Text = "Attachment 1";
-            this.attachCheck1.UseVisualStyleBackColor = true;
+            this.attFileCheckBox1.AutoSize = true;
+            this.attFileCheckBox1.Enabled = false;
+            this.attFileCheckBox1.Location = new System.Drawing.Point(20, 19);
+            this.attFileCheckBox1.Name = "attFileCheckBox1";
+            this.attFileCheckBox1.Size = new System.Drawing.Size(89, 17);
+            this.attFileCheckBox1.TabIndex = 11;
+            this.attFileCheckBox1.Text = "Attachment 1";
+            this.attFileCheckBox1.UseVisualStyleBackColor = true;
             // 
-            // browseButton
+            // browseBtn
             // 
-            this.browseButton.Location = new System.Drawing.Point(235, 40);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(75, 23);
-            this.browseButton.TabIndex = 1;
-            this.browseButton.Text = "Browse";
-            this.browseButton.UseVisualStyleBackColor = true;
-            this.browseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            this.browseBtn.Location = new System.Drawing.Point(235, 40);
+            this.browseBtn.Name = "browseBtn";
+            this.browseBtn.Size = new System.Drawing.Size(75, 23);
+            this.browseBtn.TabIndex = 1;
+            this.browseBtn.Text = "Browse";
+            this.browseBtn.UseVisualStyleBackColor = true;
+            this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
             // 
             // attach
             // 
@@ -523,7 +523,7 @@ namespace SendMail
             this.ClientSize = new System.Drawing.Size(1024, 632);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.sendButton);
+            this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -551,44 +551,44 @@ namespace SendMail
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox senderPass;
-        private System.Windows.Forms.TextBox senderEmail;
-        private System.Windows.Forms.TextBox senderName;
+        private System.Windows.Forms.TextBox senderPasswordTxt;
+        private System.Windows.Forms.TextBox senderEmailTxt;
+        private System.Windows.Forms.TextBox senderNameTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox reciEmail;
+        private System.Windows.Forms.TextBox recEmailTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private System.Windows.Forms.TextBox reciName;
+        private System.Windows.Forms.TextBox recNameTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox subjectText;
+        private System.Windows.Forms.TextBox subjectTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton disableSSL;
-        private System.Windows.Forms.RadioButton enableSSL;
-        private System.Windows.Forms.TextBox smtpPort;
-        private System.Windows.Forms.TextBox smtpHost;
+        private System.Windows.Forms.RadioButton disableSSLBtn;
+        private System.Windows.Forms.RadioButton enableSSLBtn;
+        private System.Windows.Forms.TextBox smtpPortTxt;
+        private System.Windows.Forms.TextBox smtpHostTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RichTextBox bodyRichTB;
-        private System.Windows.Forms.Button sendButton;
-        private System.Windows.Forms.CheckBox htmlCheck;
+        private System.Windows.Forms.Button sendBtn;
+        private System.Windows.Forms.CheckBox htmlCheckBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button browseButton;
+        private System.Windows.Forms.Button browseBtn;
         private System.Windows.Forms.TextBox attach;
-        private System.Windows.Forms.CheckBox attachCheck1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox attFileCheckBox1;
+        private System.Windows.Forms.Button hideBtn;
+        private System.Windows.Forms.Button showBtn;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.CheckBox attachCheck3;
-        private System.Windows.Forms.CheckBox attachCheck2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox attFileCheckBox3;
+        private System.Windows.Forms.CheckBox attFileCheckBox2;
+        private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.Button addBtn;
     }
 }
 
