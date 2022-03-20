@@ -1,6 +1,6 @@
 ﻿#region Apache License
 
-//  Copyright 2018-2021 Glenn Alon
+//  Copyright 2018-2022 Glenn Alon
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using MaterialSkin.Controls;
 using System;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SendMail
@@ -49,237 +50,117 @@ namespace SendMail
 
         private void sendBtn_Click(object sender, EventArgs e)
         {
+            _ = sendMail();
+        }
+
+        protected async Task sendMail()
+        {
             var fromAddress = new MailAddress(senderEmailTxt.Text, senderNameTxt.Text);
             var toAddress = new MailAddress(recEmailTxt.Text, recNameTxt.Text);
             string fromPassword = senderPasswordTxt.Text;
             string subject = this.subjectTxt.Text;
             string body = bodyRichTB.Text;
-
             Attachment attachment1;
             Attachment attachment2;
             Attachment attachment3;
-
-            var smtp = new SmtpClient
+            await Task.Run(() =>
             {
-                Host = smtpHostTxt.Text,
-                Port = Convert.ToInt32(smtpPortTxt.Text),
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
+                var smtp = new SmtpClient
+                {
+                    Host = smtpHostTxt.Text,
+                    Port = Convert.ToInt32(smtpPortTxt.Text),
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
 
-            using (var message = new MailMessage(fromAddress, toAddress)
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                    try
+                    {
+                        smtp.EnableSsl = SSL(enableSSLBtn);
+                        {
+                            message.IsBodyHtml = HTML(htmlCheckBox);
+
+                            switch (attFileCheckBox1.Checked)
+                            {
+                                case true:
+                                    {
+                                        attachment1 = new Attachment(AttachmentFile1);
+                                        message.Attachments.Add(attachment1);
+                                        break;
+                                    }
+                                case false:
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            switch (attFileCheckBox2.Checked)
+                            {
+                                case true:
+                                    {
+                                        attachment2 = new Attachment(AttachmentFile2);
+                                        message.Attachments.Add(attachment2);
+                                        break;
+                                    }
+                                case false:
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            switch (attFileCheckBox3.Checked)
+                            {
+                                case true:
+                                    {
+                                        attachment3 = new Attachment(AttachmentFile3);
+                                        message.Attachments.Add(attachment3);
+                                        break;
+                                    }
+                                case false:
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            smtp.Send(message);
+                            _ = MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            message.Dispose();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _ = MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        message.Dispose();
+                    }
+            });
+        }
+
+        protected bool SSL(RadioButton radioButton1)
+        {
+            switch (radioButton1.Checked)
             {
-                Subject = subject,
-                Body = body,
-                Priority = MailPriority.High
-            })
-            {
-                if (enableSSLBtn.Checked && htmlCheckBox.Checked)
-                {
-                    {
-                        try
-                        {
-                            smtp.EnableSsl = true;
-                            {
-                                message.IsBodyHtml = true;
-
-                                if (attFileCheckBox1.Checked)
-                                {
-                                    attachment1 = new Attachment(AttachmentFile1);
-                                    message.Attachments.Add(attachment1);
-                                }
-
-                                if (attFileCheckBox2.Checked)
-                                {
-                                    attachment2 = new Attachment(AttachmentFile2);
-                                    message.Attachments.Add(attachment2);
-                                }
-
-                                if (attFileCheckBox3.Checked)
-                                {
-                                    attachment3 = new Attachment(AttachmentFile3);
-                                    message.Attachments.Add(attachment3);
-                                }
-
-                                progressBar1.Minimum = 1;
-                                progressBar1.Maximum = 100000;
-                                progressBar1.Value = 1;
-                                progressBar1.Step = 1;
-                                progressBar1.Visible = true;
-                                for (int x = 1; x <= 100000; x++)
-                                {
-                                    progressBar1.PerformStep();
-                                }
-
-                                smtp.Send(message);
-                                MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                progressBar1.Visible = false;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            progressBar1.Visible = false;
-                        }
-                    }
-                }
-
-                else if (enableSSLBtn.Checked && !htmlCheckBox.Checked)
-                {
-                    {
-                        try
-                        {
-                            smtp.EnableSsl = true;
-                            {
-                                message.IsBodyHtml = false;
-
-                                if (attFileCheckBox1.Checked)
-                                {
-                                    attachment1 = new Attachment(AttachmentFile1);
-                                    message.Attachments.Add(attachment1);
-                                }
-
-                                if (attFileCheckBox2.Checked)
-                                {
-                                    attachment2 = new Attachment(AttachmentFile2);
-                                    message.Attachments.Add(attachment2);
-                                }
-
-                                if (attFileCheckBox3.Checked)
-                                {
-                                    attachment3 = new Attachment(AttachmentFile3);
-                                    message.Attachments.Add(attachment3);
-                                }
-
-                                progressBar1.Minimum = 1;
-                                progressBar1.Maximum = 100000;
-                                progressBar1.Value = 1;
-                                progressBar1.Step = 1;
-                                progressBar1.Visible = true;
-                                for (int x = 1; x <= 100000; x++)
-                                {
-                                    progressBar1.PerformStep();
-                                }
-
-                                smtp.Send(message);
-                                MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                progressBar1.Visible = false;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            progressBar1.Visible = false;
-
-                        }
-                    }
-                }
-
-                else if (disableSSLBtn.Checked && htmlCheckBox.Checked)
-                {
-                    {
-                        try
-                        {
-                            smtp.EnableSsl = false;
-                            {
-                                message.IsBodyHtml = true;
-
-                                if (attFileCheckBox1.Checked)
-                                {
-                                    attachment1 = new Attachment(AttachmentFile1);
-                                    message.Attachments.Add(attachment1);
-                                }
-
-                                if (attFileCheckBox2.Checked)
-                                {
-                                    attachment2 = new Attachment(AttachmentFile2);
-                                    message.Attachments.Add(attachment2);
-                                }
-
-                                if (attFileCheckBox3.Checked)
-                                {
-                                    attachment3 = new Attachment(AttachmentFile3);
-                                    message.Attachments.Add(attachment3);
-                                }
-
-                                progressBar1.Minimum = 1;
-                                progressBar1.Maximum = 100000;
-                                progressBar1.Value = 1;
-                                progressBar1.Step = 1;
-                                progressBar1.Visible = true;
-                                for (int x = 1; x <= 100000; x++)
-                                {
-                                    progressBar1.PerformStep();
-                                }
-
-                                smtp.Send(message);
-                                MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                progressBar1.Visible = false;
-                            }
-                        }
-
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            progressBar1.Visible = false;
-                        }
-                    }
-                }
-
-                else if (disableSSLBtn.Checked && !htmlCheckBox.Checked)
-                {
-                    {
-                        try
-                        {
-                            smtp.EnableSsl = false;
-                            {
-                                message.IsBodyHtml = false;
-
-                                if (attFileCheckBox1.Checked)
-                                {
-                                    attachment1 = new Attachment(AttachmentFile1);
-                                    message.Attachments.Add(attachment1);
-                                }
-
-                                if (attFileCheckBox2.Checked)
-                                {
-                                    attachment2 = new Attachment(AttachmentFile2);
-                                    message.Attachments.Add(attachment2);
-                                }
-
-                                if (attFileCheckBox3.Checked)
-                                {
-                                    attachment3 = new Attachment(AttachmentFile3);
-                                    message.Attachments.Add(attachment3);
-                                }
-
-                                progressBar1.Minimum = 1;
-                                progressBar1.Maximum = 100000;
-                                progressBar1.Value = 1;
-                                progressBar1.Step = 1;
-                                progressBar1.Visible = true;
-                                for (int x = 1; x <= 100000; x++)
-                                {
-                                    progressBar1.PerformStep();
-                                }
-
-                                smtp.Send(message);
-                                MessageBox.Show("Message Sent", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                progressBar1.Visible = false;
-                            }
-                        }
-
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            progressBar1.Visible = false;
-                        }
-                    }
-                }
+                case true:
+                    return true;
+                default:
+                    return false;
             }
         }
 
+        protected bool HTML(CheckBox checkBox)
+        {
+            switch (checkBox.Checked)
+            {
+                case true:
+                    return true;
+                default:
+                    return false;
+            }
+        }
         private void browseBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
@@ -334,6 +215,8 @@ namespace SendMail
                 case true when Attachment2 == true && Attachment3 == true:
                     MessageBox.Show("Attachment is full. Click 'Clear All' button to reset attachments.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     attach.Text = "";
+                    break;
+                default:
                     break;
             }
         }

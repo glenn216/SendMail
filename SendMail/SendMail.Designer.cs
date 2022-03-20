@@ -1,6 +1,6 @@
 ﻿#region Apache License
 
-//  Copyright 2018-2021 Glenn Alon
+//  Copyright 2018-2022 Glenn Alon
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -84,7 +84,6 @@ namespace SendMail
             this.attFileCheckBox1 = new System.Windows.Forms.CheckBox();
             this.browseBtn = new System.Windows.Forms.Button();
             this.attach = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -103,6 +102,7 @@ namespace SendMail
             this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.materialLabel2);
             this.groupBox1.Controls.Add(this.materialLabel1);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(318, 146);
@@ -112,6 +112,7 @@ namespace SendMail
             // 
             // hideBtn
             // 
+            this.hideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hideBtn.Location = new System.Drawing.Point(234, 113);
             this.hideBtn.Name = "hideBtn";
             this.hideBtn.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +123,7 @@ namespace SendMail
             // 
             // showBtn
             // 
+            this.showBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showBtn.Location = new System.Drawing.Point(153, 113);
             this.showBtn.Name = "showBtn";
             this.showBtn.Size = new System.Drawing.Size(75, 23);
@@ -132,30 +134,37 @@ namespace SendMail
             // 
             // senderPasswordTxt
             // 
+            this.senderPasswordTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.senderPasswordTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senderPasswordTxt.Location = new System.Drawing.Point(133, 86);
             this.senderPasswordTxt.Name = "senderPasswordTxt";
             this.senderPasswordTxt.PasswordChar = '•';
-            this.senderPasswordTxt.Size = new System.Drawing.Size(179, 20);
+            this.senderPasswordTxt.Size = new System.Drawing.Size(179, 22);
             this.senderPasswordTxt.TabIndex = 5;
             // 
             // senderEmailTxt
             // 
+            this.senderEmailTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.senderEmailTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senderEmailTxt.Location = new System.Drawing.Point(133, 60);
             this.senderEmailTxt.Name = "senderEmailTxt";
-            this.senderEmailTxt.Size = new System.Drawing.Size(179, 20);
+            this.senderEmailTxt.Size = new System.Drawing.Size(179, 22);
             this.senderEmailTxt.TabIndex = 4;
             // 
             // senderNameTxt
             // 
+            this.senderNameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.senderNameTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senderNameTxt.Location = new System.Drawing.Point(133, 32);
             this.senderNameTxt.Name = "senderNameTxt";
-            this.senderNameTxt.Size = new System.Drawing.Size(179, 20);
+            this.senderNameTxt.Size = new System.Drawing.Size(179, 22);
             this.senderNameTxt.TabIndex = 3;
             // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
+            this.materialLabel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(0, 87);
@@ -169,6 +178,7 @@ namespace SendMail
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
+            this.materialLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(22, 61);
@@ -182,6 +192,7 @@ namespace SendMail
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
+            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(24, 31);
@@ -197,6 +208,7 @@ namespace SendMail
             this.groupBox2.Controls.Add(this.materialLabel5);
             this.groupBox2.Controls.Add(this.recNameTxt);
             this.groupBox2.Controls.Add(this.materialLabel4);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 220);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(318, 89);
@@ -206,9 +218,11 @@ namespace SendMail
             // 
             // recEmailTxt
             // 
+            this.recEmailTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.recEmailTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recEmailTxt.Location = new System.Drawing.Point(131, 57);
             this.recEmailTxt.Name = "recEmailTxt";
-            this.recEmailTxt.Size = new System.Drawing.Size(179, 20);
+            this.recEmailTxt.Size = new System.Drawing.Size(179, 22);
             this.recEmailTxt.TabIndex = 8;
             // 
             // materialLabel5
@@ -226,9 +240,11 @@ namespace SendMail
             // 
             // recNameTxt
             // 
+            this.recNameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.recNameTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recNameTxt.Location = new System.Drawing.Point(131, 26);
             this.recNameTxt.Name = "recNameTxt";
-            this.recNameTxt.Size = new System.Drawing.Size(179, 20);
+            this.recNameTxt.Size = new System.Drawing.Size(179, 22);
             this.recNameTxt.TabIndex = 6;
             // 
             // materialLabel4
@@ -251,7 +267,7 @@ namespace SendMail
             this.groupBox3.Controls.Add(this.materialLabel6);
             this.groupBox3.Location = new System.Drawing.Point(12, 315);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 69);
+            this.groupBox3.Size = new System.Drawing.Size(318, 75);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "E-mail Details";
@@ -259,24 +275,29 @@ namespace SendMail
             // htmlCheckBox
             // 
             this.htmlCheckBox.AutoSize = true;
-            this.htmlCheckBox.Location = new System.Drawing.Point(66, 42);
+            this.htmlCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.htmlCheckBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.htmlCheckBox.Location = new System.Drawing.Point(66, 45);
             this.htmlCheckBox.Name = "htmlCheckBox";
-            this.htmlCheckBox.Size = new System.Drawing.Size(91, 17);
+            this.htmlCheckBox.Size = new System.Drawing.Size(96, 18);
             this.htmlCheckBox.TabIndex = 10;
             this.htmlCheckBox.Text = "HTML Format";
             this.htmlCheckBox.UseVisualStyleBackColor = true;
             // 
             // subjectTxt
             // 
+            this.subjectTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.subjectTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subjectTxt.Location = new System.Drawing.Point(131, 19);
             this.subjectTxt.Name = "subjectTxt";
-            this.subjectTxt.Size = new System.Drawing.Size(179, 20);
+            this.subjectTxt.Size = new System.Drawing.Size(179, 22);
             this.subjectTxt.TabIndex = 9;
             // 
             // materialLabel6
             // 
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
+            this.materialLabel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel6.Location = new System.Drawing.Point(62, 20);
@@ -295,7 +316,8 @@ namespace SendMail
             this.groupBox4.Controls.Add(this.materialLabel9);
             this.groupBox4.Controls.Add(this.materialLabel8);
             this.groupBox4.Controls.Add(this.materialLabel7);
-            this.groupBox4.Location = new System.Drawing.Point(12, 390);
+            this.groupBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(13, 396);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(317, 125);
             this.groupBox4.TabIndex = 8;
@@ -305,9 +327,11 @@ namespace SendMail
             // disableSSLBtn
             // 
             this.disableSSLBtn.AutoSize = true;
+            this.disableSSLBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.disableSSLBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.disableSSLBtn.Location = new System.Drawing.Point(179, 88);
             this.disableSSLBtn.Name = "disableSSLBtn";
-            this.disableSSLBtn.Size = new System.Drawing.Size(39, 17);
+            this.disableSSLBtn.Size = new System.Drawing.Size(39, 18);
             this.disableSSLBtn.TabIndex = 13;
             this.disableSSLBtn.Text = "No";
             this.disableSSLBtn.UseVisualStyleBackColor = true;
@@ -316,9 +340,11 @@ namespace SendMail
             // 
             this.enableSSLBtn.AutoSize = true;
             this.enableSSLBtn.Checked = true;
+            this.enableSSLBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.enableSSLBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enableSSLBtn.Location = new System.Drawing.Point(130, 88);
             this.enableSSLBtn.Name = "enableSSLBtn";
-            this.enableSSLBtn.Size = new System.Drawing.Size(43, 17);
+            this.enableSSLBtn.Size = new System.Drawing.Size(44, 18);
             this.enableSSLBtn.TabIndex = 12;
             this.enableSSLBtn.TabStop = true;
             this.enableSSLBtn.Text = "Yes";
@@ -326,17 +352,21 @@ namespace SendMail
             // 
             // smtpPortTxt
             // 
+            this.smtpPortTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.smtpPortTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smtpPortTxt.Location = new System.Drawing.Point(130, 58);
             this.smtpPortTxt.Name = "smtpPortTxt";
-            this.smtpPortTxt.Size = new System.Drawing.Size(179, 20);
+            this.smtpPortTxt.Size = new System.Drawing.Size(179, 22);
             this.smtpPortTxt.TabIndex = 11;
-            this.smtpPortTxt.Text = "465";
+            this.smtpPortTxt.Text = "587";
             // 
             // smtpHostTxt
             // 
+            this.smtpHostTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.smtpHostTxt.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smtpHostTxt.Location = new System.Drawing.Point(130, 30);
             this.smtpHostTxt.Name = "smtpHostTxt";
-            this.smtpHostTxt.Size = new System.Drawing.Size(179, 20);
+            this.smtpHostTxt.Size = new System.Drawing.Size(179, 22);
             this.smtpHostTxt.TabIndex = 10;
             this.smtpHostTxt.Text = "smtp.server.com";
             // 
@@ -385,9 +415,10 @@ namespace SendMail
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.bodyRichTB);
+            this.groupBox5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(336, 68);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(676, 517);
+            this.groupBox5.Size = new System.Drawing.Size(676, 537);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "E-mail Body";
@@ -397,16 +428,20 @@ namespace SendMail
             this.bodyRichTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bodyRichTB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bodyRichTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bodyRichTB.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bodyRichTB.Location = new System.Drawing.Point(7, 20);
             this.bodyRichTB.Name = "bodyRichTB";
-            this.bodyRichTB.Size = new System.Drawing.Size(663, 491);
+            this.bodyRichTB.Size = new System.Drawing.Size(663, 511);
             this.bodyRichTB.TabIndex = 0;
             this.bodyRichTB.Text = "";
             // 
             // sendBtn
             // 
             this.sendBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendBtn.Location = new System.Drawing.Point(937, 597);
+            this.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendBtn.Location = new System.Drawing.Point(937, 617);
             this.sendBtn.Name = "sendBtn";
             this.sendBtn.Size = new System.Drawing.Size(75, 23);
             this.sendBtn.TabIndex = 10;
@@ -427,7 +462,8 @@ namespace SendMail
             this.groupBox6.Controls.Add(this.attFileCheckBox1);
             this.groupBox6.Controls.Add(this.browseBtn);
             this.groupBox6.Controls.Add(this.attach);
-            this.groupBox6.Location = new System.Drawing.Point(12, 521);
+            this.groupBox6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(13, 527);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(318, 99);
             this.groupBox6.TabIndex = 11;
@@ -437,7 +473,8 @@ namespace SendMail
             // clearBtn
             // 
             this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.clearBtn.Location = new System.Drawing.Point(6, 69);
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.Location = new System.Drawing.Point(8, 69);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 15;
@@ -448,6 +485,7 @@ namespace SendMail
             // addBtn
             // 
             this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Location = new System.Drawing.Point(235, 70);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
@@ -460,9 +498,11 @@ namespace SendMail
             // 
             this.attFileCheckBox3.AutoSize = true;
             this.attFileCheckBox3.Enabled = false;
-            this.attFileCheckBox3.Location = new System.Drawing.Point(210, 19);
+            this.attFileCheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attFileCheckBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attFileCheckBox3.Location = new System.Drawing.Point(211, 19);
             this.attFileCheckBox3.Name = "attFileCheckBox3";
-            this.attFileCheckBox3.Size = new System.Drawing.Size(89, 17);
+            this.attFileCheckBox3.Size = new System.Drawing.Size(100, 18);
             this.attFileCheckBox3.TabIndex = 13;
             this.attFileCheckBox3.Text = "Attachment 3";
             this.attFileCheckBox3.UseVisualStyleBackColor = true;
@@ -471,9 +511,11 @@ namespace SendMail
             // 
             this.attFileCheckBox2.AutoSize = true;
             this.attFileCheckBox2.Enabled = false;
-            this.attFileCheckBox2.Location = new System.Drawing.Point(115, 19);
+            this.attFileCheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attFileCheckBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attFileCheckBox2.Location = new System.Drawing.Point(105, 19);
             this.attFileCheckBox2.Name = "attFileCheckBox2";
-            this.attFileCheckBox2.Size = new System.Drawing.Size(89, 17);
+            this.attFileCheckBox2.Size = new System.Drawing.Size(100, 18);
             this.attFileCheckBox2.TabIndex = 12;
             this.attFileCheckBox2.Text = "Attachment 2";
             this.attFileCheckBox2.UseVisualStyleBackColor = true;
@@ -482,15 +524,18 @@ namespace SendMail
             // 
             this.attFileCheckBox1.AutoSize = true;
             this.attFileCheckBox1.Enabled = false;
-            this.attFileCheckBox1.Location = new System.Drawing.Point(20, 19);
+            this.attFileCheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attFileCheckBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attFileCheckBox1.Location = new System.Drawing.Point(6, 19);
             this.attFileCheckBox1.Name = "attFileCheckBox1";
-            this.attFileCheckBox1.Size = new System.Drawing.Size(89, 17);
+            this.attFileCheckBox1.Size = new System.Drawing.Size(100, 18);
             this.attFileCheckBox1.TabIndex = 11;
             this.attFileCheckBox1.Text = "Attachment 1";
             this.attFileCheckBox1.UseVisualStyleBackColor = true;
             // 
             // browseBtn
             // 
+            this.browseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.browseBtn.Location = new System.Drawing.Point(235, 40);
             this.browseBtn.Name = "browseBtn";
             this.browseBtn.Size = new System.Drawing.Size(75, 23);
@@ -501,26 +546,18 @@ namespace SendMail
             // 
             // attach
             // 
+            this.attach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.attach.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attach.Location = new System.Drawing.Point(8, 43);
             this.attach.Name = "attach";
-            this.attach.Size = new System.Drawing.Size(223, 20);
+            this.attach.Size = new System.Drawing.Size(223, 22);
             this.attach.TabIndex = 0;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(786, 597);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(145, 23);
-            this.progressBar1.TabIndex = 12;
-            this.progressBar1.Visible = false;
             // 
             // SendMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 632);
-            this.Controls.Add(this.progressBar1);
+            this.ClientSize = new System.Drawing.Size(1024, 652);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.groupBox5);
@@ -583,7 +620,6 @@ namespace SendMail
         private System.Windows.Forms.CheckBox attFileCheckBox1;
         private System.Windows.Forms.Button hideBtn;
         private System.Windows.Forms.Button showBtn;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckBox attFileCheckBox3;
         private System.Windows.Forms.CheckBox attFileCheckBox2;
         private System.Windows.Forms.Button clearBtn;
